@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        int currentYear = LocalDate.now().getYear();
         leapYearCheck(1900);
-        deviceCompatibilityChecker(0, 2015);
+        deviceCompatibilityChecker(0, currentYear);
         deliveryDayCheck(95);
     }
     //TASK 1
@@ -17,15 +18,14 @@ public class Main {
 
     //TASK 2
     public static void deviceCompatibilityChecker(int clientOSNew, int clientDeviceYear){
-        int currentYear = LocalDate.now().getYear();
-        if (clientOSNew == 0 && clientDeviceYear < currentYear) {
+        if (clientOSNew == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для IOS по ссылке.");
         }
-        else if (clientOSNew == 0 && clientDeviceYear >= currentYear)
+        else if (clientOSNew == 0 && clientDeviceYear >= 2015)
         {
             System.out.println("Установите версию приложения для IOS по ссылке.");
         }
-        else if (clientOSNew == 1 && clientDeviceYear < currentYear)
+        else if (clientOSNew == 1 && clientDeviceYear < 2015)
         {
             System.out.println("Установите облегченную версию приложения для Android по ссылке.");
         }
